@@ -72,7 +72,7 @@ int calculator() {
 
     printf("Enter expression (operand operator operand): ");
     scanf("%lf %c %lf", &operand1, &operator, &operand2);
-
+    //switch, continue,break
     switch(operator) {
         case '+':
             result = operand1 + operand2;
