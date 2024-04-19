@@ -42,6 +42,7 @@ int quadratzahl()
     // Addieren der ersten n ungeraden Zahlen.
     while (zaehlerUngeradeZahlen < n) {
         i++;
+        //ungerade Zahl
         if (i % 2 != 0) {
             quadrat += i;
             printf("i: %d, quadrat: %d\n", i, quadrat);
@@ -63,26 +64,79 @@ int quadratzahl()
 
 /*
 c) !!!Diese Aufgabe ist nur für Interessierte und muss nicht zur Modulzielerreichung bearbeitet
-werden!!! Lesen Sie in einem Programm eine Zahl ein. Berechnen Sie mit einer Schleife
-die Fakultät dieser Zahl.
+werden!!! 
+Lesen Sie in einem Programm eine Zahl ein. Berechnen Sie mit einer Schleife die Fakultät dieser Zahl.
 */
+int fakultaet()
+{
+    int n, fakultaet = 1;
+    printf("Bitte geben Sie die Zahl ein, deren Fakultaet berechnet werden soll: ");
+    scanf("%d", &n);
+    for (int i = 1; i <= n; i++) {
+        fakultaet *= i;
+    }
+    printf("Die Fakultaet von %d (also %d!) ist: %d\n", n, n, fakultaet);
+    return 0;
+}
+
 
 /*
 d) Erweitern Sie Aufgabe 3d derart, dass Sie ohne Programmneustart immer wieder Berechnungen
 eingeben können.
 */
+int calculator_allways()
+{
+    float operand1, operand2, result;
+    int fehler = 0;
+    char operator;
+    while (1) {
+        printf("Bitte geben Sie den zu berechnenden Ausdruck ein: ");
+        scanf("%f %c %f", &operand1, &operator, &operand2);
+
+        if (operator == '+') {
+            result = operand1 + operand2;
+        } else if (operator == '-') {
+            result = operand1 - operand2;
+        } else if (operator == '*') {
+            result = operand1 * operand2;
+        } else if (operator == '/') {
+            if (operand2 == 0) {
+                printf("Fehler! Division durch 0!\n");
+                fehler = 1;
+            } else {
+                result = operand1 / operand2;
+            }
+        //
+        } else {
+            printf("Bitte geben Sie den Ausdruck richtig ein!\n");
+            fehler = 1;
+        }
+        // in if schleife braucht man 1, deshalb fehler ist 0, falls fehler = 1, dann in oben else Schleife
+        if (!fehler) {
+            printf("%f %c %f = %F\n", operand1, operator, operand2, result);
+        }
+    }
+    return 0;
+}
+
 
 /*
+e) !!!Diese Aufgabe ist nur für Interessierte und muss nicht zur Modulzielerreichung bearbeitet werden!!! 
+Implementieren Sie ein Programm, welches eine Zahl n einliest und entscheidet,
+ob diese prim ist. 
+Informationen dazu, wie man das tun kann, finden Sie beispielsweise unter http://de.wikipedia.org/wiki/Primzahltest. 
+Es genügt, wenn sie die Probedivision (vgl. verlinkter Artikel) implementieren und alle Zahlen bis zur eingegebenen Zahl n testen. 
+Sollte jemand von Ihnen schon etwas mehr Erfahrung in C haben, so kann gerne die math.h genutzt werden und die Optimierung (Probedivision nur bis zum Wert sqrt(n), also bis
+√n) implementiert werden.
+Vielleicht fällt Ihnen auch eine geschickte Lösung zur Optimierung ohne die Nutzung der math.h ein?
 */
-
-
-
-
 
 
 int main(){
     //zahl_ins_sterne();
-    quadratzahl();
+    //quadratzahl();
+    //fakultaet();
+    //calculator_allways();
 }
 
 
