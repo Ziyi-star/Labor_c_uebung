@@ -58,6 +58,16 @@ was zu 0111...1 führt, das ist der größtmögliche positive Wert für ein int,
 c) Implementieren Sie ein Programm, in welchem Sie eine Zahl einlesen. Diese soll als Exponent im
 Ausdruck 2n dienen. Ihr Programm soll diesen Ausdruck möglichst effizient berechnen. Nutzen Sie
 Bitoperationen!*/
+int exponent_in_2()
+{
+    int exponent;
+    int ergebnis = 1;
+    printf("Bitte geben Sie den exponenten n des ausdruck 2^n ein: ");
+    scanf("%d", &exponent);
+    ergebnis <<= exponent;
+    printf("\n2^%d = %d\n", exponent, ergebnis);
+    return 0;
+}
 
 
 int main()
