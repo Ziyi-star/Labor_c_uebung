@@ -25,16 +25,11 @@ void decToBinary(int n)
     
 }
 
-int main()
-{
-    int n = 3; // 000...0011
-    decToBinary(n);
-    int m = 5; // 000...0101
-    decToBinary(m);
-    int o = n | m;
-    decToBinary(o);
-    //XOR
-    int p = n ^ m;
-    decToBinary(p);
+/*
+int main(){
+    decToBinary(1);
+    decToBinary(2);
 
 }
+*/
+
