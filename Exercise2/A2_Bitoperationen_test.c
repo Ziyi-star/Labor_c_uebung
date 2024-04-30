@@ -39,7 +39,8 @@ void decToBinary(int n) {
     }
 
     // Handle negative numbers and zero
-    unsigned int mask = n;  // Use an unsigned int to avoid issues with right-shifting negatives
+    unsigned int mask = n;  
+    // Use an unsigned int to avoid issues with right-shifting negatives
 
     // Extract each bit; handle 32 bits for standard integer sizes
     while (i < 32) {
@@ -55,14 +56,14 @@ void decToBinary(int n) {
     printf("\n");
 }
 
-
+/*
 int main(){
     decToBinary(1);
     decToBinary(20);
     decToBinary(-10);
     decToBinary(-22);
-
-
 }
+*/
+
 
 
