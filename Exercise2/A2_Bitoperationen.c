@@ -97,6 +97,51 @@ um zu sehen, ob das Vorzeichenbit in zahl gesetzt ist.*/
     return 0;
 }
 
+/*
+e) Lesen Sie eine Ganzzahl ein. Stellen Sie mittels einer Bitoperation fest, ob es sich um eine gerade
+oder ungerade Zahl handelt.
+*/
+//loesung:Ergebnis 1 ist, ist die Zahl ungerade. Ergebnis 0 ist, ist die Zahl gerade.
+int gerade_ungerade()
+{
+    int zahl;
+    int bitmask = 1;
+    printf("Bitte geben Sie die zu untersuchende (negative oder positive) Zahl ein: ");
+    scanf("%d", &zahl);
+    if ((zahl & bitmask) == bitmask) {
+        printf("\n%d ist ungerade!\n", zahl);
+    } else {
+        printf("\n%d ist gerade!\n", zahl);
+    }
+    return 0;
+}
+
+/*
+Schreiben Sie eine Funktion, der Sie als Parameter zwei Zahlen (beides int-Variablen) übergeben.
+Beide Zahlen sollen in der Funktion binär verundet werden (wenn Sie also die Zahlen a und b
+übergeben, soll die Operation a ^ b ausgeführt werden). Geben Sie das Ergebnis der Berechnung
+zurück. Machen Sie das für alle Ihnen bekannten binären Operationen. Auch für die einwertigen,
+d. h. auch für das bitweise Negieren.*/
+int bitspielereiZweiwertig(int a, int b) {
+	return a | b;
+	// oder ...
+	//return a & b;
+	// oder
+	//return a ^ b;
+}
+
+int bitspielereiEinwertig(int a) {
+	return ~a;
+}
+
+/*
+Schreiben Sie eine Funktion, der Sie als Parameter zwei Zahlen (beides int-Variablen) übergeben.
+Sie sollen nun prüfen, ob in der binären Darstellung der Zahl, die Sie als erstes übergeben, an der
+Stelle, die durch die zweite Zahl bezeichnet ist, ein Bit gesetzt ist. Unterrichten Sie den Benutzer
+per Konsolenausgabe, ob an der angegebenen Stelle ein Bit gesetzt ist. Geben Sie aus der Funktion
+außerdem den Wert 1 zurück, falls das Bit gesetzt ist und geben Sie 0 zurück, falls das Bit in der
+übergebenen Zahl an der angegebenen Stelle nicht gesetzt ist.
+*/
 
 
 
@@ -105,5 +150,12 @@ int main()
     //zwei_char_in_short();
     //groesstmoegliche_positive_zahl();
     //exponent_in_2();
-    positiv_negativ();
+    //positiv_negativ();
+    //gerade_ungerade();
+    // int a = 4, b = 8, c;
+    // c = bitspielereiZweiwertig(a, b);
+    // printf("Beide Zahl Operationen lautet: %d\n", c);
+    // c = bitspielereiEinwertig(c);
+    // printf("Beide Zahl Operationen lautet: %d\n", c);
+    return 0;
 }
