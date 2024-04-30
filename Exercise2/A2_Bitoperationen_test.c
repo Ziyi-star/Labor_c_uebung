@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+/*this version is just for positive number
 void decToBinary(int n)
 {
     // array to store binary number
@@ -24,6 +25,7 @@ void decToBinary(int n)
     printf("%\n");
     
 }
+*/
 
 /*
 int main(){

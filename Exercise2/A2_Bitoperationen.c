@@ -60,6 +60,7 @@ Ausdruck 2n dienen. Ihr Programm soll diesen Ausdruck möglichst effizient berec
 Bitoperationen!*/
 int exponent_in_2()
 {
+    //Shift um eine Stelle nach links entspricht Multiplikation mit 2
     int exponent;
     int ergebnis = 1;
     printf("Bitte geben Sie den exponenten n des ausdruck 2^n ein: ");
@@ -69,9 +70,40 @@ int exponent_in_2()
     return 0;
 }
 
+/*d)Lesen Sie eine Ganzzahl ein. Stellen Sie mittels einer Bitoperation fest, ob es sich um eine positive
+oder eine negative Zahl handelt
+*/
+
+int positiv_negativ() {
+    /*In C (auf den meisten Plattformen) ist der Datentyp int üblicherweise 32 Bits lang. 
+Das höchste Bit (31. Bit, da die Zählung bei 0 beginnt) ist das Vorzeichenbit: 
+Es ist 1 bei negativen Zahlen und 0 bei positiven Zahlen sowie 0. 
+Daher setzt Ihr Code das 31. Bit in bitmask und verwendet dann den AND-Operator (&), 
+um zu sehen, ob das Vorzeichenbit in zahl gesetzt ist.*/
+
+    int zahl;
+    // Erstellt eine Bitmaske, bei der nur das höchste Bit (Vorzeichenbit) gesetzt ist.
+    int bitmask = 1 << 31;
+    // Aufforderung zur Eingabe einer Zahl
+    printf("Bitte geben Sie die zu untersuchende (negative oder positive) Zahl ein: ");
+    scanf("%d", &zahl);
+    decToBinary(zahl);
+    // Überprüft, ob das Vorzeichenbit gesetzt ist (d.h. ob die Zahl negativ ist)
+    if ((zahl & bitmask) == bitmask) {
+        printf("\n%d ist negativ!\n", zahl);
+    } else {
+        printf("\n%d ist positiv!\n", zahl);
+    }
+    return 0;
+}
+
+
+
 
 int main()
 {
     //zwei_char_in_short();
     //groesstmoegliche_positive_zahl();
+    //exponent_in_2();
+    positiv_negativ();
 }
